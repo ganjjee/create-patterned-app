@@ -1,12 +1,13 @@
 import fs from "fs-extra";
 import path from "path";
-import chalk from "chalk";
 import ora from "ora";
+import chalk from "chalk";
 
 interface GeneratorOptions {
   pattern: "atomic" | "fsd";
   ts?: boolean;
   react?: boolean;
+  onlyDir?: boolean;
 }
 
 export async function runGenerator(
@@ -16,10 +17,12 @@ export async function runGenerator(
   const spinner = ora("Generating project...").start();
 
   try {
-    const templateDir = path.resolve(__dirname, "templates", options.pattern);
+    const patternDir = path.resolve(__dirname, "templates", options.pattern);
+    const baseDir = path.resolve(patternDir, "base");
     const targetDir = path.resolve(process.cwd(), projectName);
 
-    await fs.copy(templateDir, targetDir);
+    await fs.ensureDir(targetDir);
+    await fs.copy(baseDir, targetDir); // ✅ base 템플릿 복사만!
 
     spinner.succeed(
       `Project '${projectName}' created using '${options.pattern}' pattern.`
