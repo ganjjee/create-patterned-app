@@ -1,0 +1,19 @@
+{
+  "name": "create-patterned-app",
+  "version": "1.0.0",
+  "description": "A project to create patterned applications using templates.",
+  "main": "bin/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node bin/index.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "commander": "^8.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
