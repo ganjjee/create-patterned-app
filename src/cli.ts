@@ -13,7 +13,17 @@ program
   .option("--react", "Set up for React", false)
   .option("--only-dir", "Only create folder structure", false)
   .action(async (projectName: string, optionsFromCLI: any) => {
+    const patterns = ["atomic", "fsd", "atomic+fsd"];
     let pattern = optionsFromCLI.pattern;
+    if (pattern && !patterns.includes(pattern)) {
+      console.error(
+        `Invalid pattern '${pattern}'. Valid options are: ${patterns.join(
+          ", "
+        )}.`
+      );
+      process.exit(1);
+    }
+
     if (!pattern) {
       const patternAnswer = await select({
         message: "Which design pattern would you like to use?",
