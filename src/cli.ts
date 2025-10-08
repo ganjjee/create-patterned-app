@@ -30,25 +30,31 @@ program
     }
 
     const { ts, react, onlyDir } = {
-      ts: await confirm({
-        message: "Do you want to use TypeScript?",
-        default: false,
-      }),
-      react: await confirm({
-        message: "Is this a React project?",
-        default: false,
-      }),
-      onlyDir: await confirm({
-        message: "Generate only folder structure (no files)?",
-        default: false,
-      }),
+      ts:
+        optionsFromCLI.ts ??
+        (await confirm({
+          message: "Do you want to use TypeScript?",
+          default: false,
+        })),
+      react:
+        optionsFromCLI.react ??
+        (await confirm({
+          message: "Is this a React project?",
+          default: false,
+        })),
+      onlyDir:
+        optionsFromCLI.onlyDir ??
+        (await confirm({
+          message: "Generate only folder structure (no files)?",
+          default: false,
+        })),
     };
 
     const options = {
       pattern,
-      ts: optionsFromCLI.ts ?? ts,
-      react: optionsFromCLI.react ?? react,
-      onlyDir: optionsFromCLI.onlyDir ?? onlyDir,
+      ts,
+      react,
+      onlyDir,
     };
 
     await runGenerator(projectName, options);
