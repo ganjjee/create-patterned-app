@@ -1,50 +1,24 @@
-import fs from "fs-extra";
-import path from "path";
-import ora from "ora";
-import chalk from "chalk";
+import { getUserInputs } from "./prompts";
+import { createFolderStructure } from "./createFolderStructure";
 
-interface GeneratorOptions {
-  pattern: "atomic" | "fsd";
-  ts?: boolean;
-  react?: boolean;
-  onlyDir?: boolean;
-}
-
-export async function runGenerator(
-  projectName: string,
-  options: GeneratorOptions
-) {
-  const spinner = ora("Generating project...").start();
+export async function main() {
+  console.log(
+    "\n🗂️ create-folder-structure - Scaffold a frontend project based on design patterns\n"
+  );
 
   try {
-    const patternDir = path.resolve(__dirname, "templates", options.pattern);
-    const baseDir = path.resolve(patternDir, "base");
-    const targetDir = path.resolve(process.cwd(), projectName);
+    const { targetDir, pattern, ts, framework } = await getUserInputs();
+    await createFolderStructure({ pattern, targetDir, ts, framework });
 
-    await fs.ensureDir(targetDir);
-    await fs.copy(baseDir, targetDir);
-
-    if (options.ts) {
-      const tsDir = path.resolve(patternDir, "ts");
-      if (await fs.pathExists(tsDir)) {
-        await fs.copy(tsDir, targetDir);
-      }
-    }
-
-    spinner.succeed(
-      `Project '${projectName}' created using '${options.pattern}' pattern.`
-    );
-    console.log(chalk.green(`\nNext steps:`));
-    console.log(`  cd ${projectName}`);
-    console.log(`  npm install (or pnpm/yarn)`);
-    console.log(`  Start coding! 🚀`);
+    console.log("✅ Folder structure created successfully.");
   } catch (err) {
     if (!(err instanceof Error)) {
       return;
     }
-    spinner.fail(
+    console.error(
       `Failed to generate project: ${err.message ? err.message : String(err)}`
     );
-    console.error(err);
   }
 }
+
+main();
