@@ -26,14 +26,14 @@ export async function runGenerator(
 
     if (options.ts) {
       const tsDir = path.resolve(patternDir, "ts");
-      if (fs.existsSync(tsDir)) {
+      if (await fs.pathExists(tsDir)) {
         await fs.copy(tsDir, targetDir);
       }
     }
 
     if (options.react) {
       const reactDir = path.resolve(patternDir, "react");
-      if (fs.existsSync(reactDir)) {
+      if (await fs.pathExists(reactDir)) {
         await fs.copy(reactDir, targetDir);
       }
     }
