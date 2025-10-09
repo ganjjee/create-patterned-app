@@ -31,13 +31,6 @@ export async function runGenerator(
       }
     }
 
-    if (options.react) {
-      const reactDir = path.resolve(patternDir, "react");
-      if (await fs.pathExists(reactDir)) {
-        await fs.copy(reactDir, targetDir);
-      }
-    }
-
     spinner.succeed(
       `Project '${projectName}' created using '${options.pattern}' pattern.`
     );
