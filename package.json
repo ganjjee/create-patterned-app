@@ -4,7 +4,7 @@
   "description": "A project to create patterned applications using templates.",
   "main": "bin/index.js",
   "scripts": {
-    "dev": "ts-node src/main.ts",
+    "dev": "tsx src/main.ts",
     "build": "tsc",
     "start": "node bin/index.js"
   },
