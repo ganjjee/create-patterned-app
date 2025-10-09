@@ -1,4 +1,3 @@
-import ora from "ora";
 import { getUserInputs } from "./prompts";
 import { createFolderStructure } from "./createFolderStructure";
 
