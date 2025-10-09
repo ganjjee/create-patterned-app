@@ -1,12 +1,22 @@
 {
   "name": "create-folder-structure",
   "version": "1.0.0",
-  "description": "A project to create patterned applications using templates.",
-  "main": "bin/index.js",
+  "description": "A CLI tool that generates folder structures based on architecture patterns (Atomic, FSD, Clean, etc.)",
+  "main": "bin/index.cjs",
+  "bin": {
+    "create-folder-structure": "bin/index.cjs"
+  },
+  "type": "module",
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "dev": "tsx src/main.ts",
     "build": "tsc",
-    "start": "node bin/index.js"
+    "prepare": "npm run build",
+    "start": "node bin/index.cjs"
   },
   "dependencies": {
     "@inquirer/prompts": "^7.8.6",
@@ -16,9 +26,28 @@
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^24.7.0",
     "tsx": "^4.20.6",
-    "typescript": "^4.9.5"
+    "typescript": "^5.4.5"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cli",
+    "folder-structure",
+    "project-generator",
+    "design-pattern",
+    "atomic-design",
+    "fsd",
+    "clean-architecture"
+  ],
+  "author": "Jeongeun An <ganjjee@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jxxxxe/create-folder-structure"
+  },
+  "homepage": "https://github.com/jxxxxe/create-folder-structure#readme",
+  "bugs": {
+    "url": "https://github.com/jxxxxe/create-folder-structure/issues"
+  }
 }
