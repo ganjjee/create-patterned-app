@@ -1,0 +1,43 @@
+export const structureMap: Record<string, string[]> = {
+  atomic: [
+    "shared/components/atoms/Button",
+    "shared/components/molecules/Card",
+    "shared/components/organisms/Header",
+    "shared/components/templates/MainLayout",
+    "pages/Home",
+  ],
+  fsd: [
+    "app",
+    "entities/user",
+    "features/auth",
+    "widgets/profile",
+    "shared",
+    "pages/Home",
+  ],
+  modular: [
+    "user/components",
+    "user/hooks",
+    "user/api",
+    "product/components",
+    "product/hooks",
+    "product/api",
+    "shared",
+    "pages/Home",
+  ],
+  clean: [
+    "presentation/components",
+    "presentation/pages/Home",
+    "domain/entities",
+    "domain/usecases",
+    "infrastructure/api",
+    "interfaces",
+    "shared",
+  ],
+  layered: [
+    "presentation/components",
+    "presentation/pages/Home",
+    "domain/models",
+    "infrastructure/api",
+    "shared",
+  ],
+};
