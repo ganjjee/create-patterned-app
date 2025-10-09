@@ -21,14 +21,6 @@ export async function createFolderStructure({
     return;
   }
 
-  const ext = ts
-    ? framework === "react"
-      ? "tsx"
-      : "ts"
-    : framework === "react"
-    ? "jsx"
-    : "js";
-
   for (const dir of dirs) {
     const fullPath = path.join(targetDir, dir);
     await fs.ensureDir(fullPath);
