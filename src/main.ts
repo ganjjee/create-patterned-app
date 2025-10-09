@@ -22,7 +22,7 @@ export async function runGenerator(
     const targetDir = path.resolve(process.cwd(), projectName);
 
     await fs.ensureDir(targetDir);
-    await fs.copy(baseDir, targetDir); // ✅ base 템플릿 복사만!
+    await fs.copy(baseDir, targetDir);
 
     spinner.succeed(
       `Project '${projectName}' created using '${options.pattern}' pattern.`
@@ -32,7 +32,12 @@ export async function runGenerator(
     console.log(`  npm install (or pnpm/yarn)`);
     console.log(`  Start coding! 🚀`);
   } catch (err) {
-    spinner.fail("Failed to generate project.");
+    if (!(err instanceof Error)) {
+      return;
+    }
+    spinner.fail(
+      `Failed to generate project: ${err.message ? err.message : String(err)}`
+    );
     console.error(err);
   }
 }
