@@ -1,10 +1,10 @@
 {
-  "name": "create-folder-structure",
+  "name": "create-patterned-app",
   "version": "1.0.0",
   "description": "A CLI tool that generates folder structures based on architecture patterns (Atomic, FSD, Clean, etc.)",
   "main": "bin/index.cjs",
   "bin": {
-    "create-folder-structure": "bin/index.cjs"
+    "create-patterned-app": "bin/index.cjs"
   },
   "type": "module",
   "files": [
@@ -44,10 +44,10 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jxxxxe/create-folder-structure"
+    "url": "https://github.com/jxxxxe/create-patterned-app"
   },
-  "homepage": "https://github.com/jxxxxe/create-folder-structure#readme",
+  "homepage": "https://github.com/jxxxxe/create-patterned-app#readme",
   "bugs": {
-    "url": "https://github.com/jxxxxe/create-folder-structure/issues"
+    "url": "https://github.com/jxxxxe/create-patterned-app/issues"
   }
 }
