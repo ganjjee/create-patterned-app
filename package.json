@@ -1,0 +1,53 @@
+{
+  "name": "create-patterned-app",
+  "version": "1.0.0",
+  "description": "A CLI tool that generates folder structures based on architecture patterns (Atomic, FSD, Clean, etc.)",
+  "main": "bin/index.cjs",
+  "bin": {
+    "create-patterned-app": "bin/index.cjs"
+  },
+  "type": "module",
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "start": "node bin/index.cjs"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.8.6",
+    "fs-extra": "^11.3.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.7.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cli",
+    "folder-structure",
+    "project-generator",
+    "design-pattern",
+    "atomic-design",
+    "fsd",
+    "clean-architecture"
+  ],
+  "author": "Jeongeun An <ganjjee@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jxxxxe/create-patterned-app"
+  },
+  "homepage": "https://github.com/jxxxxe/create-patterned-app#readme",
+  "bugs": {
+    "url": "https://github.com/jxxxxe/create-patterned-app/issues"
+  }
+}
