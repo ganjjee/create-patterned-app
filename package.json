@@ -1,6 +1,6 @@
 {
   "name": "create-patterned-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CLI tool that generates folder structures based on architecture patterns (Atomic, FSD, Clean, etc.)",
   "main": "bin/index.cjs",
   "bin": {
