@@ -1,5 +1,5 @@
-import { getUserInputs } from "./prompts";
-import { createFolderStructure } from "./createFolderStructure";
+import { getUserInputs } from "./prompts.js";
+import { createFolderStructure } from "./createFolderStructure.js";
 
 export async function main() {
   console.log(

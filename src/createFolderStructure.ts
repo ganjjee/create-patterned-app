@@ -1,8 +1,8 @@
 import path from "path";
 import fs from "fs-extra";
-import { structureMap } from "./structureMap";
-import { getBoilerplateContent } from "./getBoilerplateContent";
-import { getFileExtension } from "./getFileExtension";
+import { structureMap } from "./structureMap.js";
+import { getBoilerplateContent } from "./getBoilerplateContent.js";
+import { getFileExtension } from "./getFileExtension.js";
 
 export async function createFolderStructure({
   pattern,
