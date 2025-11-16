@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
 const { pathToFileURL } = require("url");
-const { dirname, resolve } = require("path");
-const { fileURLToPath } = require("url");
+const { resolve } = require("path");
 
-const __dirname = dirname(fileURLToPath(require.main.filename));
 const mainPath = resolve(__dirname, "../dist/main.js");
 
 import(pathToFileURL(mainPath).href).catch((err) => {
