@@ -5,6 +5,7 @@ export async function getUserInputs(): Promise<{
   pattern: string;
   ts: boolean;
   framework: string;
+  foldersOnly: boolean;
 }> {
   const targetDir = await input({
     message: "Where do you want to create the structure?",
@@ -37,10 +38,10 @@ export async function getUserInputs(): Promise<{
     default: true,
   });
 
-  return {
-    targetDir,
-    pattern,
-    ts,
-    framework,
-  };
+  const foldersOnly = await confirm({
+    message: "Create folders only (without example files)?",
+    default: true,
+  });
+
+  return { targetDir, pattern, ts, framework, foldersOnly };
 }

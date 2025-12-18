@@ -7,8 +7,15 @@ export async function main() {
   );
 
   try {
-    const { targetDir, pattern, ts, framework } = await getUserInputs();
-    await createFolderStructure({ pattern, targetDir, ts, framework });
+    const { targetDir, pattern, ts, framework, foldersOnly } =
+      await getUserInputs();
+    await createFolderStructure({
+      pattern,
+      targetDir,
+      ts,
+      framework,
+      foldersOnly,
+    });
 
     console.log("✅ Folder structure created successfully.");
   } catch (err) {
