@@ -44,10 +44,10 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jxxxxe/create-patterned-app"
+    "url": "https://github.com/ganjjee/create-patterned-app"
   },
-  "homepage": "https://github.com/jxxxxe/create-patterned-app#readme",
+  "homepage": "https://github.com/ganjjee/create-patterned-app#readme",
   "bugs": {
-    "url": "https://github.com/jxxxxe/create-patterned-app/issues"
+    "url": "https://github.com/ganjjee/create-patterned-app/issues"
   }
 }
