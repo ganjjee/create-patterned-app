@@ -1,5 +1,42 @@
 export const structureMap: Record<string, string[]> = {
   atomic: [
+    "shared/components/atoms",
+    "shared/components/molecules",
+    "shared/components/organisms",
+    "shared/components/templates",
+    "pages",
+  ],
+  fsd: ["app", "entities", "features", "widgets", "shared", "pages"],
+  modular: [
+    "user/components",
+    "user/hooks",
+    "user/api",
+    "product/components",
+    "product/hooks",
+    "product/api",
+    "shared",
+    "pages",
+  ],
+  clean: [
+    "presentation/components",
+    "presentation/pages",
+    "domain/entities",
+    "domain/usecases",
+    "infrastructure/api",
+    "interfaces",
+    "shared",
+  ],
+  layered: [
+    "presentation/components",
+    "presentation/pages",
+    "domain/models",
+    "infrastructure/api",
+    "shared",
+  ],
+};
+
+export const exampleFoldersMap: Record<string, string[]> = {
+  atomic: [
     "shared/components/atoms/Button",
     "shared/components/molecules/Card",
     "shared/components/organisms/Header",

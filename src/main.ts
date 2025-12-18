@@ -1,5 +1,5 @@
-import { getUserInputs } from "./prompts";
-import { createFolderStructure } from "./createFolderStructure";
+import { getUserInputs } from "./prompts.js";
+import { createFolderStructure } from "./createFolderStructure.js";
 
 export async function main() {
   console.log(
@@ -7,8 +7,15 @@ export async function main() {
   );
 
   try {
-    const { targetDir, pattern, ts, framework } = await getUserInputs();
-    await createFolderStructure({ pattern, targetDir, ts, framework });
+    const { targetDir, pattern, ts, framework, foldersOnly } =
+      await getUserInputs();
+    await createFolderStructure({
+      pattern,
+      targetDir,
+      ts,
+      framework,
+      foldersOnly,
+    });
 
     console.log("✅ Folder structure created successfully.");
   } catch (err) {
